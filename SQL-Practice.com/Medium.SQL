@@ -86,3 +86,20 @@ ORDER BY num_patients DESC,
 city ASC
 
 --Q10 "Show first name, last name and role of every person that is either patient or doctor.The roles are either "Patient" or "Doctor""
+SELECT first_name,last_name,'Patient' AS role from patients
+UNION ALL
+SELECT first_name,last_name,'Doctor' fROM doctors
+
+--Q11 "Show all allergies ordered by popularity. Remove NULL values from query."
+SELECT allergies,
+Count(*) AS total_diagnosis
+
+FROM patients
+
+WHERE allergies is not NULL
+
+GROUP BY allergies
+
+ORDER BY total_diagnosis DESC
+
+--Q12 ""
