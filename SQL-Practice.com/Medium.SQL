@@ -73,4 +73,16 @@ GROUP BY patient_id,
 diagnosis
 
 HAVING COUNT(*) > 1;
+
 --Q9 "Show the city and the total number of patients in the city. Order from most to least patients and then by city name ascending."
+SELECT city,
+count(*) AS num_patients
+
+FROM patients
+
+GROUP BY city
+
+ORDER BY num_patients DESC,
+city ASC
+
+--Q10 "Show first name, last name and role of every person that is either patient or doctor.The roles are either "Patient" or "Doctor""
